@@ -101,7 +101,7 @@ def __N(nums: np.array) -> int:
 def judge(start: np.array, end: np.array) -> bool:
     N1 = __N(start)
     N2 = __N(end)
-    extra = 0 if start.shape[1] % 2 != 0 else abs(find_elem(start, 0)[1] - find_elem(end, 0)[1])
+    extra = 0 if start.shape[1] % 2 == 0 else abs(find_elem(start, 0)[1] - find_elem(end, 0)[1])
     if (N1 + extra) % 2 == N2 % 2:
         return True
     else:
