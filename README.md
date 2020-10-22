@@ -4,4 +4,4 @@
 * 运行环境
   * PyCharm Community Edition 2020.2.1 x64
   
-![](https://raw.githubusercontent.com/VilTea/aster/master/Image/Image20201022170905.png)
+![](https://raw.githubusercontent.com/VilTea/astar/main/image/Image20201022170905.png)
