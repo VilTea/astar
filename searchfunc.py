@@ -1,4 +1,3 @@
-from builtins import function
 from typing import Optional, List
 from listnode import ListNode
 
