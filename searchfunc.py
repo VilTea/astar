@@ -1,4 +1,3 @@
-from builtins import function
 from typing import Optional, List
 from listnode import ListNode
 
@@ -18,6 +17,7 @@ def a_star(head: ListNode, target: ListNode
     if judge_func is not None and judge_func(head.get_val(), target.get_val()) is not True:
         print("无解")
         exit(1)
+    ans = None
     opened, closed = list(), list()
     if head is not None:
         opened.append(head)
@@ -26,7 +26,8 @@ def a_star(head: ListNode, target: ListNode
         # now.get_parent().set_cost()
         closed.append(now)
         if (now.get_val() == target.get_val()).all():
-            return now.get_road()
+            ans = now.get_road()
+            break
         now = bulit_func(now, cost_func=lambda x: dist_func(x.get_val(), target.get_val()),
                          # depth_func=lambda x: dist_func(head.get_val(), x.get_val()))
                          depth_func=lambda x: now.get_depth() + 1)
@@ -46,4 +47,4 @@ def a_star(head: ListNode, target: ListNode
                 opened.append(next_node)
             next_node = next_node.get_cousin()
         opened.sort(key=lambda x: x.get_f(), reverse=True)
-    return None
+    return ans
